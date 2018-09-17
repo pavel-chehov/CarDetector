@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="196">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View-->
+        <scene sceneID="195">
+            <objects>
+                <viewController storyboardIdentifier="MainView" id="196" customClass="MainView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="193"/>
+                        <viewControllerLayoutGuide type="bottom" id="194"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="197">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7n-WF-CUS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="1" green="0.84183301570000002" blue="0.91120738729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oON-9H-Cit">
+                                <rect key="frame" x="90" y="728" width="55" height="30"/>
+                                <state key="normal" title="Capture"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-lh-gRy">
+                                <rect key="frame" x="238" y="728" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                            </button>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-MW-I46">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ygc-96-Yfg">
+                                        <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ygc-96-Yfg" firstAttribute="centerX" secondItem="zzn-MW-I46" secondAttribute="centerX" id="b0T-l6-stq"/>
+                                    <constraint firstItem="ygc-96-Yfg" firstAttribute="centerY" secondItem="zzn-MW-I46" secondAttribute="centerY" id="haM-dO-H4h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cHu-lh-gRy" firstAttribute="centerX" secondItem="197" secondAttribute="centerX" constant="70" id="Bcq-Pe-Ooi"/>
+                            <constraint firstItem="x7n-WF-CUS" firstAttribute="leading" secondItem="197" secondAttribute="leading" id="E30-KH-W1W"/>
+                            <constraint firstItem="oON-9H-Cit" firstAttribute="centerX" secondItem="197" secondAttribute="centerX" constant="-70" id="F2Q-MZ-ZEj"/>
+                            <constraint firstItem="x7n-WF-CUS" firstAttribute="top" secondItem="197" secondAttribute="top" id="O7x-uH-jAu"/>
+                            <constraint firstAttribute="trailing" secondItem="zzn-MW-I46" secondAttribute="trailing" id="fHD-7u-rSF"/>
+                            <constraint firstItem="zzn-MW-I46" firstAttribute="leading" secondItem="197" secondAttribute="leading" id="gAh-bw-OQE"/>
+                            <constraint firstAttribute="bottom" secondItem="zzn-MW-I46" secondAttribute="bottom" id="gP2-bK-26l"/>
+                            <constraint firstAttribute="bottom" secondItem="x7n-WF-CUS" secondAttribute="bottom" id="jfV-Dr-qIA"/>
+                            <constraint firstItem="cHu-lh-gRy" firstAttribute="centerY" secondItem="oON-9H-Cit" secondAttribute="centerY" id="keT-u8-6uo"/>
+                            <constraint firstItem="zzn-MW-I46" firstAttribute="top" secondItem="197" secondAttribute="top" id="pp3-Ac-vXI"/>
+                            <constraint firstItem="194" firstAttribute="top" secondItem="oON-9H-Cit" secondAttribute="bottom" constant="20" id="pvq-d0-xE1"/>
+                            <constraint firstAttribute="trailing" secondItem="x7n-WF-CUS" secondAttribute="trailing" id="z5A-QN-5cR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="x7n-WF-CUS" id="WEn-RN-91w"/>
+                        <outlet property="captureButton" destination="oON-9H-Cit" id="QsR-eM-zlo"/>
+                        <outlet property="closeButton" destination="cHu-lh-gRy" id="DS6-Qb-3Sy"/>
+                        <outlet property="overlayView" destination="zzn-MW-I46" id="VDG-Va-1bh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="198" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="33.990147783251231"/>
+        </scene>
+    </scenes>
+</document>
