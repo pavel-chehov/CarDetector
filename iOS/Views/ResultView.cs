@@ -49,11 +49,18 @@ namespace CarDetector.iOS
         
         private void CreateBbox(Bbox bbox)
         {
-            var frame = new CGRect(bbox.BrX, bbox.BrY, bbox.Width, bbox.Height);
+            var brX = bbox.BrX * imageView.Frame.Width;
+            var brY = bbox.BrY * imageView.Frame.Height;
+            var tlX = bbox.TlX * imageView.Frame.Width;
+            var tlY = bbox.TlY * imageView.Frame.Height;
 
+            var width = brX - tlX;
+            var height = brY - tlY;
+            
+            var frame = new CGRect(tlX, tlY, width, height);
             var bboxView = new UIView(frame)
             {
-                BackgroundColor = UIColor.Red
+                BackgroundColor = UIColor.Clear
             };
             bboxView.Layer.BorderWidth = 3;
             bboxView.Layer.BorderColor = UIColor.Green.CGColor;
