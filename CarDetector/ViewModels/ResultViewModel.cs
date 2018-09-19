@@ -66,7 +66,7 @@ namespace CarDetector.ViewModels
             {
                 var aiResponse = JsonConvert.DeserializeObject<AiResponse>(aiResponseString);
                 DetectedModel = aiResponse.DetectedModels?.OrderByDescending(s => s.ModelProb).First();
-                FullPath = Mvx.Resolve<IFileService>().GetFullPathIfExists("image.png");
+                FullPath = Mvx.Resolve<IFileService>().GetFullPathIfExists(Constants.ImageFileName);
                 var detectedObject = aiResponse.DetectedObjects?.First();
                 Bbox = detectedObject.GetBbox();
             }

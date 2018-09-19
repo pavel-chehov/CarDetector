@@ -39,6 +39,7 @@
     <Compile Include="Interfaces\IDialogService.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\IFileService.cs" />
+    <Compile Include="Interfaces\IPlatformService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">

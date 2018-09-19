@@ -26,12 +26,22 @@
                                 <color key="backgroundColor" red="1" green="0.84183301570000002" blue="0.91120738729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oON-9H-Cit">
-                                <rect key="frame" x="90" y="728" width="55" height="30"/>
-                                <state key="normal" title="Capture"/>
+                                <rect key="frame" x="85" y="718" width="65" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Rpx-lK-fZ2"/>
+                                    <constraint firstAttribute="height" constant="40" id="aDG-kj-QzU"/>
+                                </constraints>
+                                <state key="normal" title="Capture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-lh-gRy">
-                                <rect key="frame" x="238" y="728" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
+                                <rect key="frame" x="225" y="718" width="65" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-MW-I46">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -52,10 +62,12 @@
                             <constraint firstItem="cHu-lh-gRy" firstAttribute="centerX" secondItem="197" secondAttribute="centerX" constant="70" id="Bcq-Pe-Ooi"/>
                             <constraint firstItem="x7n-WF-CUS" firstAttribute="leading" secondItem="197" secondAttribute="leading" id="E30-KH-W1W"/>
                             <constraint firstItem="oON-9H-Cit" firstAttribute="centerX" secondItem="197" secondAttribute="centerX" constant="-70" id="F2Q-MZ-ZEj"/>
+                            <constraint firstItem="cHu-lh-gRy" firstAttribute="width" secondItem="oON-9H-Cit" secondAttribute="width" id="INy-9Q-ZUy"/>
                             <constraint firstItem="x7n-WF-CUS" firstAttribute="top" secondItem="197" secondAttribute="top" id="O7x-uH-jAu"/>
                             <constraint firstAttribute="trailing" secondItem="zzn-MW-I46" secondAttribute="trailing" id="fHD-7u-rSF"/>
                             <constraint firstItem="zzn-MW-I46" firstAttribute="leading" secondItem="197" secondAttribute="leading" id="gAh-bw-OQE"/>
                             <constraint firstAttribute="bottom" secondItem="zzn-MW-I46" secondAttribute="bottom" id="gP2-bK-26l"/>
+                            <constraint firstItem="cHu-lh-gRy" firstAttribute="height" secondItem="oON-9H-Cit" secondAttribute="height" id="hWi-ZX-j8F"/>
                             <constraint firstAttribute="bottom" secondItem="x7n-WF-CUS" secondAttribute="bottom" id="jfV-Dr-qIA"/>
                             <constraint firstItem="cHu-lh-gRy" firstAttribute="centerY" secondItem="oON-9H-Cit" secondAttribute="centerY" id="keT-u8-6uo"/>
                             <constraint firstItem="zzn-MW-I46" firstAttribute="top" secondItem="197" secondAttribute="top" id="pp3-Ac-vXI"/>

@@ -38,6 +38,7 @@ namespace CarDetector.iOS
             Mvx.LazyConstructAndRegisterSingleton<ICameraService, CameraService>();
             Mvx.LazyConstructAndRegisterSingleton<IDialogService, DialogService>();
             Mvx.LazyConstructAndRegisterSingleton<IFileService, FileService>();
+            Mvx.LazyConstructAndRegisterSingleton<IPlatformService, PlatformService>();
             base.InitializePlatformServices();
         }
 

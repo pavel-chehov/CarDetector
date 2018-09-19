@@ -10,5 +10,7 @@ namespace CarDetector
             public const string Decline = "Decline";
             public const string Error = "Error";
         }
+
+        public const string ImageFileName = "image.png";
     }
 }

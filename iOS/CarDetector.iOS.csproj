@@ -182,6 +182,7 @@
     <Compile Include="Converters\BytesToUIImageConverter.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Converters\PathToUIImageConverter.cs" />
+    <Compile Include="Services\PlatformService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />

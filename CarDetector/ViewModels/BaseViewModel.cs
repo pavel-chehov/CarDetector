@@ -11,6 +11,7 @@ namespace CarDetector.ViewModels
 
         public IDialogService DialogService { get; } = Mvx.Resolve<IDialogService>();
         public IFileService FileService { get; } = Mvx.Resolve<IFileService>();
+        public IPlatformService PlatfromService { get; } = Mvx.Resolve<IPlatformService>();
         
         private bool _isActivated;
         protected bool IsActivated

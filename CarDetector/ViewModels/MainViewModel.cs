@@ -39,7 +39,7 @@ namespace CarDetector.ViewModels
             try
             {
                 var photoBytes = await CameraService.GetPhotoBytesAsync();
-                FileService.WriteAllBytes(photoBytes, "image.png");
+                FileService.WriteAllBytes(photoBytes, Constants.ImageFileName);
                 IsBusy = true;
                 var aiResponse = await _dataProvider.GetAiResponse(photoBytes);
                 IsBusy = false;
@@ -62,7 +62,7 @@ namespace CarDetector.ViewModels
         
         private void OnClose()
         {
-            
+            PlatfromService.QuitApplication();
         }
     }
 }
