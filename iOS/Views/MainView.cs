@@ -10,6 +10,8 @@ namespace CarDetector.iOS
 {
     public partial class MainView : BaseViewController<MainViewModel>
     {
+        private bool _isCameraInitialized = false;
+
         public MainView(IntPtr handle) : base(handle)
         {
         }
@@ -34,7 +36,14 @@ namespace CarDetector.iOS
         {
             HideNavigationBar();
             ViewModel.CameraService.AuthorizeCameraUse();
+        }
+
+        public override void ViewWillLayoutSubviews()
+        {
+            if (_isCameraInitialized)
+                return;
             ViewModel.CameraService.SetupLiveCameraStream(cameraView);
+            _isCameraInitialized = true;
         }
     }
 }
