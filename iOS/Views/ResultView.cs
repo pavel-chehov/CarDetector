@@ -1,5 +1,6 @@
 using CarDetector.DataModels;
 using CarDetector.iOS.Converters;
+using CarDetector.iOS.Extensions;
 using CarDetector.iOS.MvxCustomization;
 using CarDetector.ViewModels;
 using CoreGraphics;
@@ -17,8 +18,8 @@ namespace CarDetector.iOS
             get => null;
             set => CreateBbox(value);
         }
-        
-        public ResultView (IntPtr handle) : base (handle)
+
+        public ResultView(IntPtr handle) : base(handle)
         {
         }
 
@@ -46,23 +47,27 @@ namespace CarDetector.iOS
             set.Bind(this).For(v => v.Bbox).To(vm => vm.Bbox);
             set.Apply();
         }
-        
+
         private void CreateBbox(Bbox bbox)
         {
-            var brX = bbox.BrX * imageView.Frame.Width;
-            var brY = bbox.BrY * imageView.Frame.Height;
-            var tlX = bbox.TlX * imageView.Frame.Width;
-            var tlY = bbox.TlY * imageView.Frame.Height;
+            var widthScale = imageView.Bounds.Size.Width / imageView.Image.Size.Width;
+            var heightScale = imageView.Bounds.Size.Height / imageView.Image.Size.Height;
+
+            var brX = bbox.BrX * imageView.Image.Size.Width * widthScale;
+            var brY = bbox.BrY * imageView.Image.Size.Height * heightScale;
+            var tlX = bbox.TlX * imageView.Image.Size.Width * widthScale;
+            var tlY = bbox.TlY * imageView.Image.Size.Height * heightScale;
 
             var width = brX - tlX;
             var height = brY - tlY;
-            
-            var frame = new CGRect(tlX, tlY, width, height);
+
+            const int borderWidth = 3;
+            var frame = new CGRect(tlX-borderWidth,tlY-borderWidth,width+borderWidth*2, height+borderWidth*2);
             var bboxView = new UIView(frame)
             {
                 BackgroundColor = UIColor.Clear
             };
-            bboxView.Layer.BorderWidth = 3;
+            bboxView.Layer.BorderWidth = borderWidth;
             bboxView.Layer.BorderColor = UIColor.Green.CGColor;
             imageView.AddSubview(bboxView);
         }

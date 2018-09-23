@@ -1,1 +1,1 @@
-car detector app
+Client for neural network which can detect car model by the photo.

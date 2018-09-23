@@ -146,6 +146,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -184,6 +185,7 @@
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Converters\PathToUIImageConverter.cs" />
     <Compile Include="Services\PlatformService.cs" />
+    <Compile Include="Extensions\UIImageViewExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />
